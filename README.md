@@ -4,7 +4,7 @@
 
 ---
 
-**⏱️ Build time:** ~4 hours
+**⏱️ Build time:** ~2 hours
 **🤖 Built with:** CrewAI multi-agent framework
 **🎯 Purpose:** Market research automation for business expansion analysis
 
@@ -25,7 +25,6 @@ This system deploys 5 specialized AI agents to conduct comprehensive market rese
 
 ## Tech Stack
 
-- **Python 3.11+** - Core language
 - **CrewAI 0.201.1** - Multi-agent orchestration framework
 - **OpenAI GPT-4o-mini** - Language model (token-optimized)
 - **Serper API** - Web search capabilities
@@ -37,7 +36,7 @@ This system deploys 5 specialized AI agents to conduct comprehensive market rese
 
 ### Prerequisites
 
-- Python 3.8+
+- Python 3.11+
 - OpenAI API key ([get one here](https://platform.openai.com/api-keys))
 - Serper API key ([get one here](https://serper.dev/api-key))
 
@@ -100,9 +99,6 @@ Expected runtime: **5-15 minutes**
 - 🇧🇷 Brazil
 - 🇲🇽 Mexico
 - 🇦🇷 Argentina
-- 🇨🇴 Colombia
-- 🇨🇱 Chile
-- 🇵🇪 Peru
 
 **Analysis Areas:**
 - Market size and growth trends
@@ -132,11 +128,9 @@ The system generates `latam_beer_market_report.txt` containing:
 Traditional market research is time-consuming and expensive. This project demonstrates how multi-agent AI systems can automate the initial research phase, providing:
 
 - **Speed**: 15 minutes vs weeks of manual research
-- **Cost**: API costs vs $10k+ consulting fees
+- **Cost**: Just API Costs
 - **Comprehensiveness**: Parallel analysis across multiple dimensions
 - **Objectivity**: Data-driven insights from public sources
-
-Perfect for entrepreneurs, investors, or businesses exploring LATAM expansion opportunities.
 
 ---
 
@@ -162,60 +156,4 @@ Perfect for entrepreneurs, investors, or businesses exploring LATAM expansion op
 
 ---
 
-## Project Structure
-
-```
-BeerMarket_Analyst/
-├── agents.py              # Agent definitions with roles and tools
-├── tasks.py               # Task definitions with dependencies
-├── crew.py                # Crew orchestration and workflow
-├── main.py                # Main execution script
-├── requirements.txt       # Python dependencies
-├── .env.example           # Environment variable template
-├── .gitignore            # Git ignore rules
-├── SETUP.md              # Virtual environment setup guide
-├── OPTIMIZATIONS.md      # Token optimization documentation
-└── README.md             # This file
-```
-
----
-
-## Troubleshooting
-
-**Problem:** Rate limit errors
-**Solution:** Check [OPTIMIZATIONS.md](OPTIMIZATIONS.md) - already optimized for 200K TPM limit
-
-**Problem:** Missing API keys
-**Solution:** Ensure `.env` file exists and contains valid keys
-
-**Problem:** Slow execution
-**Solution:** Normal - comprehensive research takes 5-15 minutes
-
-**Problem:** Installation errors
-**Solution:** Use Python 3.8+ and install in virtual environment
-
-**Problem:** Empty results
-**Solution:** Verify internet connection and API credit availability
-
----
-
-## License
-
-MIT License - See [LICENSE](LICENSE) file for details
-
----
-
-## Contributing
-
-Feel free to open issues or submit pull requests for improvements!
-
-**Ideas for contributions:**
-- Add more LATAM countries
-- Include additional industries (wine, spirits, soft drinks)
-- Export to PDF/Excel formats
-- Add visualization dashboards
-- Integrate more data sources
-
----
-
-**Made with 🤖 and CrewAI**
+⚡️ Built in 2 hours • Part of thexperiment.dev
