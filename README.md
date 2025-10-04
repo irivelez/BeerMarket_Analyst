@@ -1,112 +1,102 @@
 # 🍺 LATAM Beer Market Analyst
 
-Multi-agent AI system powered by CrewAI for comprehensive beer market research across Latin America.
+**Multi-agent AI system for strategic beer market research across Latin America**
 
-## 🎯 Overview
+---
 
-This system uses 5 specialized AI agents to analyze the beer market in 6 LATAM countries (Brazil, Mexico, Argentina, Colombia, Chile, Peru) to identify expansion opportunities.
+**⏱️ Build time:** ~4 hours
+**🤖 Built with:** CrewAI multi-agent framework
+**🎯 Purpose:** Market research automation for business expansion analysis
 
-### Research Scope
-- **Market Intelligence**: Market size, growth trends, pricing strategies
-- **Competitive Analysis**: Key players, market share, value propositions
-- **Financial Analysis**: EBITDA, margins, profitability metrics
-- **Regional Insights**: Country-specific regulatory, distribution, and consumer insights
-- **Strategic Recommendations**: Ranked expansion opportunities with action plans
+---
 
-## 🤖 AI Agents
+## What It Does
 
-1. **Market Intelligence Researcher** - Market data & pricing analysis
-2. **Competitive Analysis Specialist** - Competitor mapping & positioning
-3. **Financial Analyst** - Financial metrics from public sources
-4. **Regional Market Specialist** - Country-specific insights
-5. **Opportunity Synthesis Manager** - Strategic recommendations
+This system deploys 5 specialized AI agents to conduct comprehensive market research on the beer industry across 6 Latin American countries. It autonomously gathers data, analyzes competition, extracts financial metrics, and synthesizes strategic recommendations for market entry.
 
-## 🛠️ Tools Used
+**Key outputs:**
+- Market sizing and growth forecasts
+- Competitive landscape with market share estimates
+- Financial benchmarks (EBITDA, margins, profitability)
+- Country-specific entry barriers and opportunities
+- Ranked expansion recommendations with action plans
 
-- **SerperDevTool** - Google search via Serper API
-- **WebsiteSearchTool** - Website content search
-- **ScrapeWebsiteTool** - Web page scraping
+---
 
-## 📋 Prerequisites
+## Tech Stack
+
+- **Python 3.11+** - Core language
+- **CrewAI 0.201.1** - Multi-agent orchestration framework
+- **OpenAI GPT-4o-mini** - Language model (token-optimized)
+- **Serper API** - Web search capabilities
+- **CrewAI Tools** - SerperDevTool, WebsiteSearchTool, ScrapeWebsiteTool
+
+---
+
+## Quick Start
+
+### Prerequisites
 
 - Python 3.8+
-- OpenAI API key
-- Serper API key
+- OpenAI API key ([get one here](https://platform.openai.com/api-keys))
+- Serper API key ([get one here](https://serper.dev/api-key))
 
-## 🚀 Installation
+### Setup
 
-1. Clone or download this repository
-
-2. Install dependencies:
+1. **Clone the repository**
 ```bash
+git clone https://github.com/irivelez/BeerMarket_Analyst.git
+cd BeerMarket_Analyst
+```
+
+2. **Create virtual environment and install dependencies**
+```bash
+# Using uv (recommended)
+uv venv
+source .venv/bin/activate
+uv pip install -r requirements.txt
+
+# Or using standard venv
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-3. Configure environment variables:
+3. **Configure API keys**
 ```bash
 cp .env.example .env
 ```
 
-Edit `.env` and add your API keys:
+Edit `.env` and add your keys:
 ```
 OPENAI_API_KEY=your_openai_api_key_here
 SERPER_API_KEY=your_serper_api_key_here
 ```
 
-## 💻 Usage
-
-Run the market research:
+4. **Run the analysis**
 ```bash
 python main.py
 ```
 
-The process takes 10-30 minutes depending on API response times.
+Expected runtime: **5-15 minutes**
 
-## 📊 Output
+---
 
-The system generates a comprehensive report (`latam_beer_market_report.txt`) containing:
+## How It Works
 
-- Executive summary
-- Market size and growth analysis
-- Pricing landscape
-- Competitive positioning
-- Financial benchmarks
-- Country-by-country insights
-- Top expansion opportunities (ranked)
-- Strategic recommendations
-- Action plan
+### The Crew
 
-## 📁 Project Structure
+5 specialized AI agents work sequentially to research the market:
 
-```
-BeerMarket_Analyst/
-├── agents.py              # Agent definitions
-├── tasks.py               # Task definitions
-├── crew.py                # Crew configuration
-├── main.py                # Main execution script
-├── requirements.txt       # Python dependencies
-├── .env.example           # Environment template
-├── .env                   # Your API keys (not in git)
-└── README.md              # This file
-```
+1. **Market Intelligence Researcher** - Gathers market size, growth rates, pricing data
+2. **Competitive Analysis Specialist** - Maps competitors, market share, brand positioning
+3. **Financial Analyst** - Extracts EBITDA, margins, profitability from public sources
+4. **Regional Market Specialist** - Analyzes regulations, distribution, entry barriers by country
+5. **Opportunity Synthesis Manager** - Synthesizes findings into strategic recommendations
 
-## 🔑 API Keys
+### Research Coverage
 
-### OpenAI API
-Get your key at: https://platform.openai.com/api-keys
-
-### Serper API
-Get your key at: https://serper.dev/api-key
-
-## ⚙️ Configuration
-
-The system uses:
-- **Process**: Sequential (tasks run in order)
-- **LLM**: OpenAI GPT models (configurable)
-- **Tools**: CrewAI built-in tools only
-
-## 🎓 Target Markets
-
+**Target Markets:**
 - 🇧🇷 Brazil
 - 🇲🇽 Mexico
 - 🇦🇷 Argentina
@@ -114,23 +104,118 @@ The system uses:
 - 🇨🇱 Chile
 - 🇵🇪 Peru
 
-## 📝 Notes
+**Analysis Areas:**
+- Market size and growth trends
+- Pricing strategies by segment (premium, mainstream, economy, craft)
+- Competitive landscape and market share
+- Financial performance of key players
+- Regulatory environment and distribution channels
+- Strategic expansion opportunities
 
-- All data is sourced from publicly available information
-- Financial data prioritizes trusted sources (Yahoo Finance, Bloomberg, company IR sites)
-- The system does not use custom tools or PDF parsing
-- Results depend on data availability and API quality
+---
 
-## 🔍 Troubleshooting
+## Output
 
-**Missing API keys**: Ensure `.env` file is properly configured
+The system generates `latam_beer_market_report.txt` containing:
 
-**API errors**: Check API key validity and credits
+1. **Market Overview** - Size, growth, pricing by country
+2. **Competitive Analysis** - Top players, market share, positioning
+3. **Financial Benchmarks** - EBITDA margins, profitability metrics
+4. **Regional Insights** - Country comparison with entry barriers
+5. **Strategic Recommendations** - Ranked expansion opportunities
+6. **Action Plan** - Next steps for market entry
 
-**Slow execution**: Normal for comprehensive research (10-30 min)
+---
 
-**No results**: Verify internet connection and API access
+## Why This Exists
 
-## 📄 License
+Traditional market research is time-consuming and expensive. This project demonstrates how multi-agent AI systems can automate the initial research phase, providing:
 
-This project is for educational and research purposes.
+- **Speed**: 15 minutes vs weeks of manual research
+- **Cost**: API costs vs $10k+ consulting fees
+- **Comprehensiveness**: Parallel analysis across multiple dimensions
+- **Objectivity**: Data-driven insights from public sources
+
+Perfect for entrepreneurs, investors, or businesses exploring LATAM expansion opportunities.
+
+---
+
+## Features
+
+✅ **Token-optimized** - Designed to work within OpenAI rate limits
+✅ **Configurable** - Easy to adjust countries, segments, or focus areas
+✅ **Sequential workflow** - Tasks build on each other for coherent analysis
+✅ **Public data only** - No proprietary databases required
+✅ **Automated synthesis** - Combines multiple data sources into actionable insights
+
+---
+
+## Limitations
+
+- **Data recency** - Limited to publicly available online information
+- **Accuracy** - Estimates may vary; should be validated with primary research
+- **Scope** - Focuses on top 3 countries (configurable to all 6)
+- **API costs** - Requires active OpenAI and Serper subscriptions
+- **Language** - Primarily searches English-language sources
+
+> **Note:** This tool is for initial research and opportunity identification. Always validate findings with on-the-ground market research before major investment decisions.
+
+---
+
+## Project Structure
+
+```
+BeerMarket_Analyst/
+├── agents.py              # Agent definitions with roles and tools
+├── tasks.py               # Task definitions with dependencies
+├── crew.py                # Crew orchestration and workflow
+├── main.py                # Main execution script
+├── requirements.txt       # Python dependencies
+├── .env.example           # Environment variable template
+├── .gitignore            # Git ignore rules
+├── SETUP.md              # Virtual environment setup guide
+├── OPTIMIZATIONS.md      # Token optimization documentation
+└── README.md             # This file
+```
+
+---
+
+## Troubleshooting
+
+**Problem:** Rate limit errors
+**Solution:** Check [OPTIMIZATIONS.md](OPTIMIZATIONS.md) - already optimized for 200K TPM limit
+
+**Problem:** Missing API keys
+**Solution:** Ensure `.env` file exists and contains valid keys
+
+**Problem:** Slow execution
+**Solution:** Normal - comprehensive research takes 5-15 minutes
+
+**Problem:** Installation errors
+**Solution:** Use Python 3.8+ and install in virtual environment
+
+**Problem:** Empty results
+**Solution:** Verify internet connection and API credit availability
+
+---
+
+## License
+
+MIT License - See [LICENSE](LICENSE) file for details
+
+---
+
+## Contributing
+
+Feel free to open issues or submit pull requests for improvements!
+
+**Ideas for contributions:**
+- Add more LATAM countries
+- Include additional industries (wine, spirits, soft drinks)
+- Export to PDF/Excel formats
+- Add visualization dashboards
+- Integrate more data sources
+
+---
+
+**Made with 🤖 and CrewAI**
